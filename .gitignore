@@ -1,5 +1,5 @@
-# created by virtualenv automatically
-bin
-lib
-share
-./src/output
+bin/
+lib/
+lib64/
+include/
+pyvenv.cfg
