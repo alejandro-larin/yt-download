@@ -25,15 +25,18 @@ cd download-list-music
 Scripts\activate
 pip install -r requirements.txt
 ```
-## Configure Pytube
 
-For  config they library of pytube is nesesary change this code:
-![InnerTube Class Exemple 1](img/config_1.png)
+## Pytubefix config
 
-The class cotain a attribute called `client` has to change the code to:
-![InnerTube Class Exemple 1](img/config_2.png)
+What you need is to search for this portion of code:
+![alt text](img/exemple-1.png)
 
-The class is locate in the file `Innertube.py`
+And change too:
+
+![alt text](img/exemple-2.png)
+
+The file name is : **innertube**
+The dir name is : **lib64/python3.x.x/site-packages**
 
 
 
