@@ -49,7 +49,7 @@ class Innertube:
                 index= 528
                 for i in range(2):
                     lineInput = data[index+i].split("=")
-                    lineInput[1]=' " " \n' 
+                    lineInput[1]=' "" \n' 
                     data[index+i] = '='.join(lineInput)
 
             with open(self.path, "w") as file:
