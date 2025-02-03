@@ -1,8 +1,15 @@
 import os
+from colorama import Style,Fore
 
 class Config:
     def __init__(self):
         self.pytubefix = Pytubefix()
+    def clear(self):
+        if os.name == 'nt': 
+            os.system('cls')
+        else:  
+            os.system('clear')
+
 
 class Pytubefix:
     def __init__(self):
@@ -37,20 +44,18 @@ class Innertube:
             return
 
         try:
-            with open(self.path, "r+") as file:
+            with open(self.path, "r") as file:
                 data = file.readlines()
                 index= 528
-
                 for i in range(2):
                     lineInput = data[index+i].split("=")
-                    lineInput[1]='" " \n' 
+                    lineInput[1]=' " " \n' 
                     data[index+i] = '='.join(lineInput)
 
+            with open(self.path, "w") as file:
                 file.writelines(data)
-                print("Contenido del Archivo Modificado")
-                
-        except Exception as e:
-            print(f"Error al leer o escribir en el archivo: {e}")
+                print(f"{Fore.GREEN}Configure Succes!{Fore.WHITE}")
 
-config = Config()
-config.pytubefix.innertube.replace_token_verifier()
+        except Exception as e:
+            print(f"{Fore.RED}Error to read the file Innertube.py: {Fore.WHITE}{e}")
+
