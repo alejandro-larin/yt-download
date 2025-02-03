@@ -16,7 +16,7 @@ For create a virtual enviroment is nesesary this command and install dependece w
 python3 -m venv ./download-list-music
 cd download-list-music
 source bin/activate
-pip install -r requeriments.txt
+pip install -r requirements.txt
 
 
 # Windows
