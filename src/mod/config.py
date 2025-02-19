@@ -65,6 +65,7 @@ class Innertube:
             with open(self.path, "r") as file:
                 data = file.readlines()
                 index= 528
+                data[index-1]="\n"
                 for i in range(2):
                     lineInput = data[index+i].split("=")
                     lineInput[1]=' "" \n' 
@@ -76,4 +77,3 @@ class Innertube:
         except Exception as e:
             print(f"{Fore.RED}❌ Error to read the file Innertube.py: {Fore.WHITE}{e}")
             sleep(1.0)
-
