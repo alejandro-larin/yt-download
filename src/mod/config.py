@@ -18,7 +18,7 @@ class Config:
         if not isExist:
             try:
                 os.mkdir(path)
-                print(f"{Fore.GREEN}✅ Directory {path} created")
+                print(f"{Fore.YELLOW}✅ Directory {path} created")
                 sleep(1.0)
                 self.clear()
             except OSError:

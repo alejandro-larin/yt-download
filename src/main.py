@@ -1,12 +1,12 @@
 from pytubefix import Playlist, YouTube
 from colorama import Fore, Style
 from mod.config import Config
+from mod.menu import Menu
 import const
 from time import sleep
 
 
 config = Config()
-
 
 def init_config():
     print(Style.BRIGHT)
@@ -33,11 +33,23 @@ def download_video(video_url, output_path):
     print(Fore.GREEN + f'{youtube.title} descargado con éxito.\n')
     sleep(2)
 
+
+def diskOption():
+    options={
+        "Playlist": download_playlist,
+        "Video": download_video,
+    }
+    menu=Menu(options)
+    menu.showOptions()
+
+    choicedOption= int(input("Select a option:"))
+    menu.executeSelect(choicedOption,const.URL,const.PATH)
+
+
 if __name__ == '__main__':
     init_config()
-    # download_playlist(const.URL, const.PATH)
-    download_video('https://www.youtube.com/watch?v=KpD53CQ5hSs',const.PATH)
-
+    diskOption()
+    
 Style.RESET_ALL
 config.clear()
 

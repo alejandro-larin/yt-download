@@ -1,42 +1,18 @@
-def downloadVideo():
-    print("descargando video")
+from colorama import Fore, Style
+class Menu:
+    def __init__(self,options):
+        self.optionsDict = options
+        self.optionsList= list(self.optionsDict)
+
+    def showOptions(self):
+        for index,option in enumerate(self.optionsList):
+            print(f"{index+1}. {option}") 
 
 
-def downloadVideo():
-    print("descargando video")
+    def executeSelect(self,choicedValue,*arg):
+        self.choicedOption = choicedValue-1
+        self.selectOption= self.optionsList[self.choicedOption]
 
+        if 0 <= self.choicedOption <= len(self.optionsList):
+            self.optionsDict[self.selectOption](*arg)
 
-options = [
-    ["Playlist", "Video"],
-    ["Mp3", "Mp4"]
-]
-
-
-def showMenu(array):
-    for index, option in enumerate(array, start=1):
-        print(f"{index}. {option}")
-
-
-def choicedOption(select, array):
-    if 1 <= select <= len(array): 
-        option= array[select-1]
-        print(f"Has seleccionado: {option}")
-        # sleep(2)
-        # config.clear()
-        # downloadPlaylist
-        
-        print('Descargando Playlist')
-        print("Desacargando Video")
-        
-    else:
-        print("Selección no válida")
-
-
-def menu():
-    print("Seleccione una opción:")
-    showMenu(options[0])
-    select = int(input("Ingrese el número de la opción: ")) 
-    choicedOption(select, options[0])  
-
-
-menu()
