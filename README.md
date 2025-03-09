@@ -26,17 +26,6 @@ Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Pytubefix config
-
-What you need is to search for this portion of code:
-![alt text](img/exemple-1.png)
-
-And change too:
-
-![alt text](img/exemple-2.png)
-
-The file name is : **innertube**
-The dir name is : **lib64/python3.x.x/site-packages**
 
 
 
