@@ -1,9 +1,14 @@
+import const
+
 from pytubefix import Playlist, YouTube
 from colorama import Fore, Style
+from time import sleep
+
 from mod.config import Config
 from mod.menu import Menu
-import const
-from time import sleep
+from mod.mp3_convert import convert_mp4_to_mp3
+
+
 
 
 config = Config()
@@ -34,21 +39,34 @@ def download_video(video_url, output_path):
     sleep(2)
 
 
-def diskOption():
+def disk_first_options():
     options={
         "Playlist": download_playlist,
         "Video": download_video,
     }
-    menu=Menu(options)
+    menu = Menu(options)
     menu.showOptions()
 
     choicedOption= int(input("Select a option:"))
     menu.executeSelect(choicedOption,const.URL,const.PATH)
+    
+def disk_second_options():
+    options={
+        "Mp4": "",
+        "Mp3": convert_mp4_to_mp3,
+    }
+    menu = Menu(options)
+    menu.showOptions()
+
+    choicedOption= int(input("Select a option: "))
+    menu.executeSelect(choicedOption, const.PATH)
+    
 
 
 if __name__ == '__main__':
     init_config()
-    diskOption()
+    disk_first_options()
+    disk_second_options()
     
 Style.RESET_ALL
 config.clear()

@@ -6,7 +6,7 @@ class Menu:
 
     def showOptions(self):
         for index,option in enumerate(self.optionsList):
-            print(f"{index+1}. {option}") 
+            print(f"{Fore.YELLOW}{index+1}. {Fore.WHITE}{option}") 
 
 
     def executeSelect(self,choicedValue,*arg):
