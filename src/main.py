@@ -23,6 +23,7 @@ def download_playlist(playlist_url, output_path):
     print(Fore.CYAN + f'Descargando playlist: {playlist.title}')
 
     for video in playlist.videos:
+        config.clear()
         print(Fore.YELLOW + f'Descargando: {video.title}...')
         stream = video.streams.first()
         stream.download(output_path)
@@ -32,11 +33,11 @@ def download_playlist(playlist_url, output_path):
 
 def download_video(video_url, output_path):
     youtube = YouTube(video_url,use_po_token=True)
-    print(Fore.CYAN + f'Descargando: {youtube.title}')
+    print(f'Descargando: {youtube.title}')
     stream = youtube.streams.first()
     stream.download(output_path)
-    print(Fore.GREEN + f'{youtube.title} descargado con éxito.\n')
-    sleep(2)
+
+
 
 
 def disk_first_options():
