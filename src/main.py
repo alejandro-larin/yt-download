@@ -32,8 +32,8 @@ def download_playlist(playlist_url, output_path):
 
 def download_video(video_url, output_path):
     youtube = YouTube(video_url,use_po_token=True)
-    print(Fore.CYAN + f'Descargando: {youtube.title}')
-    stream = youtube.streams.first()
+    print(f'Descargando: {youtube.title}')
+    stream = youtube.streams.get_highest_resolution()
     stream.download(output_path)
     print(Fore.GREEN + f'{youtube.title} descargado con éxito.\n')
     sleep(2)
