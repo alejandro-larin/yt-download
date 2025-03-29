@@ -13,15 +13,15 @@ For create a virtual enviroment is nesesary this command and install dependece w
 
 ```bash
 # Linux
-python3 -m venv ./download-list-music
-cd download-list-music
+python3 -m venv ./yt-download/
+cd ./yt-download/
 source bin/activate
 pip install -r requirements.txt
 
 
 # Windows
-python -m venv download-list-music
-cd download-list-music
+python -m venv ./yt-download/
+cd ./yt-download/
 Scripts\activate
 pip install -r requirements.txt
 ```
