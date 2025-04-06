@@ -5,8 +5,7 @@ Welcome to my project of download videos in python for initalitation this projec
 Clone the ropository with git:
 
 ```bash
-git clone https://gitlab.com/personal8945746/python/download-list-music.git
-
+git clone https://github.com/alejandro-larin/yt-download.git
 ```
 ### Virtual Enviroment
 For create a virtual enviroment is nesesary this command and install dependece with pip:
